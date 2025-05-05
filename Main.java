@@ -31,10 +31,14 @@ public class Main {
                 // Handle player actions
                 switch (choice) {
                     case 1:
-                        // Player attacks enemy
-                        player.attack(monster);
+                        if (monster.getHp() <= 30) {
+                            // when HP monster is <= 30, player can attack with bonus damage
+                            player.attack(monster, 5);
+                        } else {
+                            // serangan biasa
+                            player.attack(monster);
+                        }
                         if (monster.getHp() > 0) {
-                            // Enemy counterattacks if still alive
                             monster.attack(player);
                         }
                         break;

@@ -42,6 +42,13 @@ public class Character {
         enemy.receiveDamage(damage);
     }
 
+    // Overloaded method for attack with bonus
+    public void attack(Character enemy, int bonusDamage) {
+        int damage = this.attackPower + bonusDamage;
+        System.out.println(name + " menyerang dengan kekuatan tambahan! Damage: " + damage);
+        enemy.receiveDamage(damage);
+    }
+
     // Method for defend against incoming damage
     public void defend(int incomingDamage, String attackerName) {
         System.out.println(attackerName + " menyerang! Damage: " + incomingDamage);
